@@ -1,2 +1,3 @@
 # Proyecto-de-Ing
-Página web para un uso "RARS" (registro, adopción, reporte y seguimiento) en animales callejeros o en peligro.
+Website for registration, adoption, reporting and tracking of stray and endangered animals.
+Done by: Jaime Rojas, Iván Ovalles, Adrián Macheda, Jesús Claros and Benjamín Gil.
