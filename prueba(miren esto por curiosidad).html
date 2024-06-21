@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplos de Animaciones CSS</title>
+    <style>
+        .fade-in {
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .slide-in {
+            animation: slideIn 1s ease-in-out;
+        }
+
+        .bounce {
+            animation: bounce 2s infinite;
+        }
+
+        .rotate {
+            animation: rotate 3s linear infinite;
+        }
+
+        .pulse {
+            animation: pulse 1s infinite;
+        }
+
+        .shake {
+            animation: shake 0.5s;
+        }
+
+        .expand-contract {
+            animation: expandContract 2s ease-in-out infinite;
+        }
+
+        .color-change {
+            animation: colorChange 3s linear infinite;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateX(-100%); }
+            to { transform: translateX(0); }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-30px); }
+            60% { transform: translateY(-15px); }
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            10%, 30%, 50%, 70%, 90% { transform: translateX(-10px); }
+            20%, 40%, 60%, 80% { transform: translateX(10px); }
+        }
+
+        @keyframes expandContract {
+            0%, 100% { width: 100px; }
+            50% { width: 200px; }
+        }
+
+        @keyframes colorChange {
+            0% { background-color: red; }
+            50% { background-color: blue; }
+            100% { background-color: red; }
+        }
+
+        .animation-box {
+            width: 100px;
+            height: 100px;
+            margin: 20px;
+            display: inline-block;
+            background-color: #32CD32;
+        }
+    </style>
+</head>
+<body>
+    <div class="animation-box fade-in">Fade In</div>
+    <div class="animation-box slide-in">Slide In</div>
+    <div class="animation-box bounce">Bounce</div>
+    <div class="animation-box rotate">Rotate</div>
+    <div class="animation-box pulse">Pulse</div>
+    <div class="animation-box shake">Shake</div>
+    <div class="animation-box expand-contract">Expand/Contract</div>
+    <div class="animation-box color-change">Color Change</div>
+</body>
+</html>
