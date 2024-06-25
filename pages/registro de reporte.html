@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reportar Animal en Peligro</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: url('https://wallpaperaccess.com/full/2886021.jpg') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Changed to flex-start */
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 20px;
+            box-sizing: border-box;
+            overflow-y: auto; /* Enable scrolling */
+        }
+        .report-container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 800px;
+            margin-top: 20px; /* Space from top */
+        }
+        .report-container h2 {
+            margin-bottom: 10px;
+            color: #333;
+            text-align: center;
+            font-weight: 600;
+        }
+        .report-container p {
+            margin-bottom: 20px;
+            color: #666;
+            text-align: center;
+            font-size: 16px;
+        }
+        .report-btn {
+            width: 100%;
+            padding: 12px;
+            background-color: #28a745;
+            border: none;
+            color: white;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .report-btn:hover {
+            background-color: #218838;
+        }
+        .form-group small {
+            color: #666;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="report-container">
+            <h2>Reportar Animal en Peligro</h2>
+            <p>Por favor, completa la siguiente información para ayudarnos a actuar rápidamente.</p>
+            <form id="reportForm">
+                <div class="form-group">
+                    <label for="animalName">Nombre del Animal</label>
+                    <input type="text" class="form-control" id="animalName" name="animalName" required>
+                </div>
+                <div class="form-group">
+                    <label for="description">Descripción del Animal</label>
+                    <textarea class="form-control" id="description" name="description" rows="3" required></textarea>
+                    <small>Proporcione detalles como apariencia, comportamiento, etc.</small>
+                </div>
+                <div class="form-group">
+                    <label for="location">Ubicación</label>
+                    <input type="text" class="form-control" id="location" name="location" required>
+                    <small>Incluya una dirección o coordenadas si es posible.</small>
+                </div>
+                <div class="form-group">
+                    <label for="reporterName">Su Nombre</label>
+                    <input type="text" class="form-control" id="reporterName" name="reporterName" required>
+                </div>
+                <div class="form-group">
+                    <label for="reporterEmail">Correo Electrónico</label>
+                    <input type="email" class="form-control" id="reporterEmail" name="reporterEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="contactNumber">Número de Contacto</label>
+                    <input type="tel" class="form-control" id="contactNumber" name="contactNumber" required>
+                </div>
+                <div class="form-group">
+                    <label for="comment">Comentario Adicional</label>
+                    <textarea class="form-control" id="comment" name="comment" rows="3"></textarea>
+                    <small>Puede dejar cualquier comentario adicional que considere relevante.</small>
+                </div>
+                <div class="form-group">
+                    <label for="media">Adjuntar Fotos o Videos</label>
+                    <input type="file" class="form-control-file" id="media" name="media" accept="image/*,video/*" multiple>
+                    <small>Puede adjuntar fotos o videos del animal en peligro.</small>
+                </div>
+                <button type="submit" class="btn report-btn">Enviar Reporte</button>
+            </form>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.getElementById('reportForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Reporte enviado exitosamente');
+            // Manejar la presentación del formulario aquí
+        });
+    </script>
+</body>
+</html>
