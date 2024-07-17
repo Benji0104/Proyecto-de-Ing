@@ -46,28 +46,15 @@ body {
 }
 
 .form-wrapper {
-  animation: hideLayer .3s ease-out forwards;
+  animation: fadeIn .3s ease-out forwards;
 }
 
-.form-wrapper.is-active {
-  animation: showLayer .3s ease-in forwards;
-}
-
-@keyframes showLayer {
-  50% {
-    z-index: 1;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
   }
-  100% {
-    z-index: 1;
-  }
-}
-
-@keyframes hideLayer {
-  0% {
-    z-index: 1;
-  }
-  49.999% {
-    z-index: 1;
+  to {
+    opacity: 1;
   }
 }
 
@@ -90,14 +77,9 @@ body {
   transition: all .3s ease-out;
 }
 
-.form-wrapper.is-active .switcher-login {
+.switcher-login {
   color: #ffffff;
-  transform: translateX(90px);
-}
-
-.form-wrapper.is-active .switcher-signup {
-  color: #ffffff;
-  transform: translateX(-90px);
+  transform: translateX(0);
 }
 
 .form {
@@ -110,96 +92,15 @@ body {
   transform-origin: top;
 }
 
-.form-login {
-  animation: hideLogin .3s ease-out forwards;
-}
-
-.form-wrapper.is-active .form-login {
-  animation: showLogin .3s ease-in forwards;
-}
-
-@keyframes showLogin {
-  0% {
-    background: #d7e7f1;
-    transform: translate(40%, 10px);
-  }
-  50% {
-    transform: translate(0, 0);
-  }
-  100% {
-    background-color: rgba(0, 0, 0, 0.6);
-    transform: translate(35%, -20px);
-  }
-}
-
-@keyframes hideLogin {
-  0% {
-    background-color: rgba(0, 0, 0, 0.6);
-    transform: translate(35%, -20px);
-  }
-  50% {
-    transform: translate(0, 0);
-  }
-  100% {
-    background: #d7e7f1;
-    transform: translate(40%, 10px);
-  }
-}
-
-.form-signup {
-  animation: hideSignup .3s ease-out forwards;
-}
-
-.form-wrapper.is-active .form-signup {
-  animation: showSignup .3s ease-in forwards;
-}
-
-@keyframes showSignup {
-  0% {
-    background: #d7e7f1;
-    transform: translate(-40%, 10px) scaleY(.8);
-  }
-  50% {
-    transform: translate(0, 0) scaleY(.8);
-  }
-  100% {
-    background-color: rgba(0, 0, 0, 0.6);
-    transform: translate(-35%, -20px) scaleY(1);
-  }
-}
-
-@keyframes hideSignup {
-  0% {
-    background-color: rgba(0, 0, 0, 0.6);
-    transform: translate(-35%, -20px) scaleY(1);
-  }
-  50% {
-    transform: translate(0, 0) scaleY(.8);
-  }
-  100% {
-    background: #d7e7f1;
-    transform: translate(-40%, 10px) scaleY(.8);
-  }
-}
-
 .form fieldset {
   position: relative;
-  opacity: 0;
   margin: 0;
   padding: 0;
   border: 0;
   transition: all .3s ease-out;
 }
 
-.form-login fieldset {
-  transform: translateX(-50%);
-}
-
-.form-signup fieldset {
-  transform: translateX(50%);
-}
-
-.form-wrapper.is-active fieldset {
+.form fieldset {
   opacity: 1;
   transform: translateX(0);
   transition: opacity .4s ease-in, transform .35s ease-in;
@@ -237,7 +138,7 @@ body {
 }
 
 .btn {
-  opacity: 0;
+  opacity: 1;
   display: block;
   min-width: 280px;
   margin: 30px auto 10px;
@@ -250,11 +151,6 @@ body {
   color: #ffffff;
   background: #00ff00;
   box-shadow: inset 0 0 0 2px #00ff00;
-  transform: translateX(30%);
-}
-
-.form-wrapper.is-active .form [type='submit'] {
-  opacity: 1;
   transform: translateX(0);
   transition: all .4s ease-in;
 }
