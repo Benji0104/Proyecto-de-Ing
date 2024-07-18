@@ -1,4 +1,5 @@
 body {
+<<<<<<< HEAD
   font-family: 'Poppins', sans-serif;
   background: url('https://wallpaperaccess.com/full/2886021.jpg') no-repeat center center fixed;
   background-size: cover;
@@ -56,3 +57,78 @@ body {
   color: #666;
   font-size: 12px;
 }
+=======
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #e7e2e2; /* gris plateado pastel */
+}
+
+.container {
+  width: 60%; /* Ancho del 60% del contenedor padre */
+  max-width: 600px; /* Máximo ancho de 600px */
+  margin: 0 auto; /* Centrado horizontal */
+  padding: 20px; /* Espaciado interno */
+  background-color: #fff; /* Fondo blanco */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+}
+
+h1 {
+  text-align: center;
+  color: #333; /* gris oscuro */
+}
+
+p {
+  text-align: center;
+  color: #666; /* gris */
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+fieldset {
+  border: 1px solid #ddd; /* gris claro */
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+legend {
+  font-weight: bold;
+}
+
+label {
+  margin: 10px 0 5px;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #b4b1b1; /* gris claro */
+  border-radius: 4px;
+}
+
+input[type="radio"] {
+  margin: 0 10px 0 5px;
+}
+
+input[type="submit"] {
+  padding: 10px;
+  background-color: #28a745; /* verde */
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+input[type="submit"]:hover {
+  background-color: #218838; /* verde más oscuro al pasar el mouse */
+}
+  
+>>>>>>> 4a427a1081e5e5a857be5c2046438b8e385d2fc6
