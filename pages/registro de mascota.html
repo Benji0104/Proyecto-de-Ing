@@ -13,7 +13,7 @@
   <div class="container">
     <h1>Formulario de Registro de Mascota</h1>
     <p>Use la tecla Tab para moverse de un campo de entrada a otro.</p>
-    <form name="petRegistration" onsubmit="return formValidation();">
+    <form id="petRegistrationForm">
       <fieldset>
         <legend>Información del Propietario:</legend>
         <label for="ownerName">Nombre del Propietario:</label>
@@ -50,5 +50,8 @@
       <input type="submit" value="Registrar">
     </form>
   </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="js/form-handler.js"></script>
 </body>
 </html>
