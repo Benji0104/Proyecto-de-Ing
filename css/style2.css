@@ -1,121 +1,194 @@
+/* Estilos para el cuerpo del documento */
 body {
+  /* Tipografía principal para el documento */
   font-family: 'Poppins', sans-serif;
-  background:
-              url('https://wallpaperaccess.com/full/2886021.jpg') no-repeat center center fixed;
+  /* Fondo con imagen fija y cubriendo todo el contenedor */
+  background: url('https://wallpaperaccess.com/full/2886021.jpg') no-repeat center center fixed;
   background-size: cover;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start; 
-  height: 100vh;
-  margin: 0;
-}
-
-.container {
-  width: fit-content;  
+  /* Usar Flexbox para alinear el contenido */
   display: flex;
   justify-content: center;
   align-items: flex-start;
+  /* Altura completa de la ventana del navegador */
+  height: 100vh;
+  /* Eliminar márgenes por defecto */
+  margin: 0;
+}
+
+/* Estilos para el contenedor principal */
+.container {
+  /* Ancho ajustado al contenido, pero puede causar problemas en diseño */
+  width: fit-content;  
+  /* Usar Flexbox para alinear el contenido */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  /* Espaciado interno del contenedor */
   padding: 35%;
+  /* Incluir padding y border en el cálculo del ancho y alto del contenedor */
   box-sizing: border-box;
 }
 
+/* Estilos para el contenedor del reporte */
 .report-container {
+  /* Fondo blanco con opacidad */
   background-color: rgba(255, 255, 255, 0.9);
+  /* Espaciado interno del contenedor del reporte */
   padding: 40px;
+  /* Bordes redondeados */
   border-radius: 15px;
+  /* Sombra para dar efecto de profundidad */
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  /* Ancho completo del contenedor, con un máximo de 800px */
   width: 100%;
   max-width: 800px;
-  margin-top: 20px; 
+  /* Espacio superior para separación */
+  margin-top: 20px;
 }
 
+/* Estilos para los encabezados <h2> dentro del contenedor del reporte */
 .report-container h2 {
+  /* Espacio inferior */
   margin-bottom: 10px;
-  color: #333; 
+  /* Color del texto oscuro */
+  color: #333;
+  /* Alinear el texto al centro */
   text-align: center;
+  /* Negrita para el texto */
   font-weight: 600;
 }
 
+/* Estilos para los párrafos dentro del contenedor del reporte */
 .report-container p {
+  /* Espacio inferior */
   margin-bottom: 20px;
-  color: #666; 
+  /* Color del texto gris */
+  color: #666;
+  /* Alinear el texto al centro */
   text-align: center;
+  /* Tamaño de fuente */
   font-size: 16px;
 }
 
+/* Estilos para el botón de reporte */
 .report-btn {
+  /* Ancho completo del botón */
   width: 100%;
+  /* Espaciado interno del botón */
   padding: 12px;
+  /* Color de fondo verde */
   background-color: #28a745;
+  /* Eliminar el borde del botón */
   border: none;
+  /* Color del texto blanco */
   color: rgb(255, 255, 255);
+  /* Bordes redondeados */
   border-radius: 8px;
+  /* Tamaño de fuente */
   font-size: 16px;
+  /* Cambiar el cursor al pasar sobre el botón */
   cursor: pointer;
+  /* Transición suave para el color de fondo */
   transition: background-color 0.3s;
 }
 
+/* Estilos para el botón de reporte al pasar el cursor sobre él */
 .report-btn:hover {
+  /* Color de fondo al pasar el cursor sobre el botón */
   background-color: #218838;
 }
 
+/* Estilos para pequeños textos dentro de los grupos de formularios */
 .form-group small {
+  /* Color del texto gris */
   color: #666;
+  /* Tamaño de fuente pequeño */
   font-size: 12px;
+  /* Eliminar margen y padding */
   margin: 0;
   padding: 0;
 }
 
+/* Estilos para el contenedor general */
 .container {
+  /* Ancho ajustado a 60% del contenedor padre, con un máximo de 600px */
   width: 60%; 
   max-width: 600px; 
+  /* Centrando el contenedor en la página */
   margin: 0 auto; 
+  /* Espaciado interno */
   padding: 20px; 
+  /* Fondo blanco con opacidad */
   background-color: #ffffff91; 
+  /* Sombra para dar efecto de profundidad */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
 }
 
+/* Estilos para el encabezado principal <h1> */
 h1 {
+  /* Alinear el texto al centro */
   text-align: center;
+  /* Color del texto oscuro */
   color: #333; 
 }
 
+/* Estilos para los párrafos generales */
 p {
+  /* Alinear el texto al centro */
   text-align: center;
+  /* Color del texto gris */
   color: #666; 
 }
 
+/* Estilos para los formularios */
 form {
+  /* Usar Flexbox para alinear los elementos del formulario en columna */
   display: flex;
   flex-direction: column;
 }
 
+/* Estilos para los campos dentro del formulario */
 fieldset {
+  /* Borde gris claro alrededor del campo */
   border: 1px solid #ddd; 
+  /* Espacio inferior */
   margin-bottom: 20px;
+  /* Espaciado interno del campo */
   padding: 10px;
 }
 
+/* Estilos para el título del campo dentro del formulario */
 legend {
+  /* Negrita para el texto del título */
   font-weight: bold;
 }
 
+/* Estilos para las etiquetas dentro del formulario */
 label {
+  /* Espacio alrededor de la etiqueta */
   margin: 10px 0 5px;
+  /* Negrita para el texto de la etiqueta */
   font-weight: bold;
 }
 
+/* Estilos para los campos de entrada de texto y áreas de texto */
 input[type="text"],
 input[type="email"],
 textarea {
+  /* Ancho completo menos el padding */
   width: calc(100% - 20px);
+  /* Espaciado interno */
   padding: 10px;
+  /* Espacio inferior */
   margin-bottom: 10px;
+  /* Borde negro */
   border: 1px solid #000000; 
+  /* Bordes redondeados */
   border-radius: 4px;
 }
 
+/* Estilos para los botones de radio */
 input[type="radio"] {
-  margin: 0 10px 0 5px
+  /* Espacio alrededor del botón de radio */
+  margin: 0 10px 0 5px;
 }
-

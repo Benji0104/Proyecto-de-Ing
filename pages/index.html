@@ -4,55 +4,114 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RAA</title>
+    <!-- Enlaza el archivo de estilos personalizado -->
     <link rel="stylesheet" href="../css/style.css">
-    <!-- Link de Bootstrap CSS para el estilo del carrusel y el navbar -->
+    <!-- Enlaza el archivo CSS de Bootstrap para estilizar el carrusel y el navbar -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <!-- Favicon -->
+    <!-- Enlaza el archivo CSS de AOS para animaciones en scroll -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Favicon del sitio web -->
     <link rel="icon" href="../images/icono para la página.png" type="image/x-icon">
+    <style>
+        /* Animación para el fondo con cubos que se mueven y cambian de forma */
+        @keyframes animate {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+                border-radius: 0;
+            }
+            100% {
+                transform: translateY(-1000px) rotate(720deg);
+                opacity: 0;
+                border-radius: 50%;
+            }
+        }
+
+        /* Estilo del fondo animado que ocupa toda la pantalla */
+        .background {
+            position: fixed;        
+            width: 99vw;
+            height: 205vh;
+            top: 0;
+            left: 0;
+            margin: 0;
+            padding: 0;
+            background: #a2d5f2;
+            overflow: hidden;
+            z-index: -1;
+        }
+        /* Estilo de cada cubo en el fondo animado */
+        .background li {
+            position: absolute;
+            display: block;
+            list-style: none;
+            width: 20px;
+            height: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            animation: animate 19s linear infinite;
+        }
+        /* Configuración de la posición y animación de cada cubo en el fondo */
+        .background li:nth-child(0) { left: 49%; width: 139px; height: 139px; bottom: -139px; animation-delay: 1s; }
+        .background li:nth-child(1) { left: 89%; width: 155px; height: 155px; bottom: -155px; animation-delay: 5s; }
+        .background li:nth-child(2) { left: 14%; width: 100px; height: 100px; bottom: -100px; animation-delay: 6s; }
+        .background li:nth-child(3) { left: 35%; width: 101px; height: 101px; bottom: -101px; animation-delay: 1s; }
+        .background li:nth-child(4) { left: 57%; width: 119px; height: 119px; bottom: -119px; animation-delay: 5s; }
+        .background li:nth-child(5) { left: 78%; width: 110px; height: 110px; bottom: -110px; animation-delay: 9s; }
+        .background li:nth-child(6) { left: 85%; width: 114px; height: 114px; bottom: -114px; animation-delay: 29s; }
+        .background li:nth-child(7) { left: 16%; width: 173px; height: 173px; bottom: -173px; animation-delay: 28s; }
+        .background li:nth-child(8) { left: 22%; width: 185px; height: 185px; bottom: -185px; animation-delay: 7s; }
+        .background li:nth-child(9) { left: 41%; width: 199px; height: 199px; bottom: -199px; animation-delay: 22s; }
+    </style>
 </head>
 <body>
-    <!-- Navbar -->
+    <!-- Fondo animado con cubos -->
+    <ul class="background">
+        <!-- Los elementos de la lista son los cubos animados en el fondo -->
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+
+    <!-- Barra de navegación (navbar) -->
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container">
+            <!-- Botón de alternancia para dispositivos móviles -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+            <!-- Elementos de la barra de navegación -->
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Inicio</a> 
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="registro de mascota.html">Registro</a>
-                    </li>
-                    <li class="nav-item" id="adoptar-link">
-                        <a class="nav-link" href="Visualizacion.html">Adoptar</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="registro de reporte.html">Reportar Caso</a>
-                    </li>
-                    <li class="nav-item" id="seguimiento-link">
-                        <a class="nav-link" href="#">Seguimiento</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="registrar.html">Registrarse</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="iniciosesion.html">Iniciar sesión</a>
-                    </li>
+                    <!-- Enlaces de navegación -->
+                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="registro de mascota.html">Registro</a></li>
+                    <li class="nav-item" id="adoptar-link"><a class="nav-link" href="Visualizacion.html">Adoptar</a></li>
+                    <li class="nav-item"><a class="nav-link" href="registro de reporte.html">Reportar Caso</a></li>
+                    <li class="nav-item" id="seguimiento-link"><a class="nav-link" href="#">Seguimiento</a></li>
+                    <li class="nav-item"><a class="nav-link" href="registrar.html">Registrarse</a></li>
+                    <li class="nav-item"><a class="nav-link" href="iniciosesion.html">Iniciar sesión</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Carrusel -->
+    <!-- Carrusel de imágenes -->
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
+            <!-- Indicadores del carrusel -->
             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
         </ol>
         <div class="carousel-inner">
+            <!-- Elementos del carrusel -->
             <div class="carousel-item active">
                 <img src="../images/primerslide1.jpeg" class="d-block w-100" alt="Primer Slide">
                 <div class="carousel-caption d-md-block">
@@ -72,6 +131,7 @@
                 </div>
             </div>
         </div>
+        <!-- Controles del carrusel -->
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="sr-only">Anterior</span>
@@ -82,68 +142,68 @@
         </a>
     </div>
 
-   <!-- Contenido principal -->
-   <div class="container mt-4">
-        <div class="row">
-            <div class="col-lg-8 offset-lg-2">
-                <div class="main-content">
-                    <h2>Bienvenidos a Rescate y Adopción Animal</h2>
-                    <p>El refugio digital dedicado a transformar la vida de los animales en La Chorrera. Nuestra página está diseñada para ser una plataforma integral donde puedes:</p>
+    <!-- Contenido principal de la página -->
+    <div class="container mt-4">
+        <h2>Bienvenidos a Rescate y Adopción Animal</h2>
+        <p>El refugio digital dedicado a transformar la vida de los animales en La Chorrera. Nuestra página está diseñada para ser una plataforma integral donde puedes:</p>
 
-                    <div data-aos="fade-right" class="card mb-3">
-                        <div class="card-body">
-                            <h3 class="card-title">Registrarte como voluntario</h3>
-                            <p class="card-text">y unirte a nuestra causa.</p>
-                            <button class="btn btn-primary">Registrar mascota</button>
-                        </div>
-                    </div>
-                    <div class="card mb-3">
-                        <div class="card-body">
-                            <h3 class="card-title">Adoptar una mascota</h3>
-                            <p class="card-text">en busca de un hogar amoroso, con un proceso fácil y transparente.</p>
-                            <button class="btn btn-primary">Adoptar</button>
-                        </div>
-                    </div>
-                    <div class="card mb-3">
-                        <div class="card-body">
-                            <h3 class="card-title">Reportar casos de animales en peligro o situación de maltrato</h3>
-                            <p class="card-text">garantizando una respuesta rápida y efectiva.</p>
-                            <button class="btn btn-primary">Reportar caso de peligro</button>
-                        </div>
-                    </div>
-                    <div class="card mb-3">
-                        <div class="card-body">
-                            <h3 class="card-title">Seguir el seguimiento de las mascotas adoptadas</h3>
-                            <p class="card-text">asegurando su bienestar continuo y facilitando la conexión entre adoptantes y nuestra comunidad de rescate.</p>
-                            <button class="btn btn-primary">Seguimiento de mascota</button>
-                        </div>
-                    </div>
-
-                    <p>En Rescate y Adopción Animal, creemos en la importancia de un enfoque comunitario para salvar vidas y fomentar el bienestar animal. Nuestra misión es no solo rescatar y rehabilitar a los animales necesitados, sino también crear una red de apoyo y educación para asegurar que cada mascota tenga una vida plena y feliz. Únete a nosotros y sé parte del cambio positivo en La Chorrera.</p>
-                </div>
+        <!-- Tarjetas de contenido -->
+        <div data-aos="zoom-in-down" class="card mb-3">
+            <div class="card-body">
+                <h3 class="card-title">Registrar una mascota</h3>
+                <p class="card-text">y unirte a la causa.</p>
+                <a href="registro de mascota.html" class="btn btn-primary">Registrar mascota</a>
             </div>
         </div>
-    </div>
 
-    <!-- Footer -->
+        <div data-aos="zoom-in-left" class="card mb-3">
+            <div class="card-body">
+                <h3 class="card-title">Adoptar una mascota</h3>
+                <p class="card-text">en busca de un hogar amoroso, con un proceso fácil y transparente.</p>
+                <a href="Visualizacion.html" class="btn btn-primary">Adoptar</a>
+            </div>
+        </div>
+
+        <div data-aos="zoom-in-right" class="card mb-3">
+            <div class="card-body">
+                <h3 class="card-title">Reportar casos de animales en peligro o situación de maltrato</h3>
+                <p class="card-text">garantizando una respuesta rápida y efectiva.</p>
+                <a href="registro de reporte.html" class="btn btn-primary">Reportar caso de peligro</a>
+            </div>
+        </div>
+
+        <div data-aos="fade-up" class="card mb-3">
+            <div class="card-body">
+                <h3 class="card-title">Seguir el seguimiento de las mascotas adoptadas</h3>
+                <p class="card-text">asegurando su bienestar continuo y facilitando la conexión entre adoptantes y nuestra comunidad de rescate.</p>
+                <a href="#" class="btn btn-primary">Seguimiento de mascota</a>
+            </div>
+        </div>
+    </div>    
+
+    <!-- Pie de página -->
     <footer>
         <p>&copy; 2024 R.D.A. Todos los derechos reservados.</p>
     </footer>
 
-    <!-- Scripts de Bootstrap para el funcionamiento del carrusel y el navbar -->
+    <!-- Scripts de Bootstrap y AOS para funcionalidad y animaciones -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-    <!-- Script para verificar si el usuario está logueado -->
+    <!-- Script para verificar si el usuario está logueado y ajustar la visibilidad de los enlaces -->
     <script>
-        // Simulando si el usuario ha iniciado sesión o no
-        var isLoggedIn = false; // Cambia esta variable según el estado real del usuario
+        var isLoggedIn = true; // Cambia esta variable según el estado real del usuario
 
         if (!isLoggedIn) {
             document.getElementById('adoptar-link').style.display = 'none';
             document.getElementById('seguimiento-link').style.display = 'none';
         }
+    </script>
+    <!-- Inicializa las animaciones de AOS -->
+    <script>
+        AOS.init();
     </script>
 </body>
 </html>

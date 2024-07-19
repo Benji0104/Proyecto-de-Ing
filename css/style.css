@@ -1,15 +1,29 @@
+/* Estilos para el cuerpo del documento */
 body {
+    /* Aplicar un filtro de desenfoque y saturación al fondo */
     backdrop-filter: blur(0px) saturate(37%);
     -webkit-backdrop-filter: blur(0px) saturate(37%);
+    /* Color de fondo con transparencia */
     background-color: rgba(17, 25, 40, 0.93);
+    /* Bordes redondeados */
     border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.125); 
+    /* Borde con color blanco semitransparente */
+    border: 1px solid rgba(255, 255, 255, 0.125);
+    /* Se debe usar 'flex' para el ancho y alto en lugar de 'width' y 'height' */
+    width: 100%; /* Corregido a 100% para ajustar el ancho al contenedor */
+    height: 100vh; /* Corregido a 100vh para cubrir toda la altura de la ventana */
 }
+
+/* Estilos para la barra de navegación */
 .navbar {
-    background: linear-gradient(45deg, #32CD32, #006400, #a2d5f2); /* Degradado verde liama a verde oscuro a azul pastel */
+    /* Degradado que va de verde claro a verde oscuro y azul pastel */
+    background: linear-gradient(45deg, #32CD32, #006400, #a2d5f2);
     background-size: 200% 200%;
+    /* Animación del degradado */
     animation: gradientAnimation 5s ease infinite;
 }
+
+/* Animación para el degradado de la barra de navegación */
 @keyframes gradientAnimation {
     0% {
         background-position: 0% 50%;
@@ -21,66 +35,127 @@ body {
         background-position: 0% 50%;
     }
 }
+
+/* Estilos para la marca y enlaces de la barra de navegación */
 .navbar-brand, .nav-link {
-    color: #ffffff !important; 
+    /* Color blanco con prioridad sobre otros estilos */
+    color: #ffffff !important;
+    /* Tipografía específica */
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+
+/* Estilos para las imágenes en el carrusel */
 .carousel-item img {
+    /* Altura fija para las imágenes */
     height: 500px;
-    object-fit: cover; 
+    /* Ajustar la imagen para que cubra el contenedor */
+    object-fit: cover;
+    /* Aplicar un filtro de opacidad */
     filter: opacity(85%);
 }
 
-footer {
-    background-color: #006400;
-    color: #000000;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    text-align: center;
-    padding: 10px 0;
-    position: flex;
-    width: 100%;
-    bottom: 0;
+/* Estilos para las tarjetas */
+.card {
+    /* Bordes altamente redondeados */
+    border-radius: 65px;
 }
+
+/* Estilos para el pie de página */
+footer {
+    /* Color de fondo verde oscuro */
+    background-color: #006400;
+    /* Color del texto negro */
+    color: #000000;
+    /* Tipografía específica */
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    /* Alinear el texto al centro */
+    text-align: center;
+    /* Espaciado vertical del pie de página */
+    padding: 10px 0;
+    /* La propiedad 'position' y 'width' deben ser corregidas */
+    position: static; /* Corregido a 'static' para un pie de página normal */
+    width: 100%; /* Corregido a 100% para ajustar el ancho al contenedor */
+    bottom: 0; /* Posiciona el pie de página al final del contenedor */
+}
+
+/* Estilos para el contenido principal */
 .main-content {
+    /* Color de fondo claro */
     background-color: #dbd6d6;
+    /* Espaciado interno del contenido */
     padding: 30px;
+    /* Bordes redondeados */
     border-radius: 8px;
+    /* Sombra para dar efecto de profundidad */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* Alinear el texto al centro */
     text-align: center;
 }
 
+/* Estilos para los encabezados <h2> dentro del contenido principal */
 .main-content h2 {
+    /* Color del texto oscuro */
     color: #333333;
-    font-family: 'Arial', sans-serif;
+    /* Tipografía específica */
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    /* Negrita para el texto */
     font-weight: bold;
+    /* Espaciado inferior */
     margin-bottom: 20px;
 }
 
+/* Estilos para los párrafos dentro del contenido principal */
 .main-content p {
+    /* Color del texto gris claro */
     color: #666666;
-    font-family: 'Arial', sans-serif;
+    /* Tipografía específica */
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    /* Tamaño de fuente */
     font-size: 18px;
+    /* Espaciado entre líneas */
     line-height: 1.6;
 }
+
+/* Estilos para los botones */
 .btn {
+    /* Mostrar el botón en línea y como bloque */
     display: inline-block;
+    /* Espaciado interno del botón */
     padding: 10px 20px;
+    /* Tamaño de fuente del botón */
     font-size: 16px;
+    /* Negrita para el texto del botón */
     font-weight: bold;
+    /* Alinear el texto al centro */
     text-align: center;
+    /* Eliminar subrayado del texto del botón */
     text-decoration: none;
+    /* Color de fondo azul claro */
     background-color: #a2d5f2;
+    /* Color del texto blanco */
     color: white;
+    /* Eliminar el borde del botón */
     border: none;
+    /* Bordes redondeados */
     border-radius: 4px;
+    /* Cambiar el cursor al pasar sobre el botón */
     cursor: pointer;
+    /* Transición suave para el color de fondo */
+    transition: background-color 0.3s;
 }
+
+/* Estilos para el botón al pasar el cursor sobre él */
 .btn:hover {
+    /* Color de fondo al pasar el cursor sobre el botón */
     background-color: #0056b3;
 }
 
-h2{
+/* Estilos para los encabezados <h2> en general */
+h2 {
+    /* Color del texto negro */
     color: #000000;
+    /* Tipografía específica */
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    /* Tamaño de fuente más grande */
     font-size: larger;
 }

@@ -4,20 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reportar Animal en Peligro</title>
+    <!-- Enlaza el archivo de estilos de Bootstrap para utilizar sus estilos y componentes -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-     <!-- Favicon -->
-  <link rel="icon" href="../images/icono para la página.png" type="image/x-icon">
+    <!-- Favicon del sitio web -->
+    <link rel="icon" href="../images/icono para la página.png" type="image/x-icon">
     <style>
+        /* Estilos generales del cuerpo de la página */
         body {
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
             background: url('https://wallpaperaccess.com/full/2886021.jpg') no-repeat center center fixed;
             background-size: cover;
             display: flex;
             justify-content: center;
-            align-items: flex-start; /* Changed to flex-start */
+            align-items: flex-start; /* Cambiado a flex-start para alinear el contenido en la parte superior */
             height: 100vh;
             margin: 0;
         }
+        /* Contenedor principal con scroll habilitado */
         .container {
             width: 100%;
             display: flex;
@@ -25,8 +28,9 @@
             align-items: flex-start;
             padding: 20px;
             box-sizing: border-box;
-            overflow-y: auto; /* Enable scrolling */
+            overflow-y: auto; /* Habilita el scroll vertical si el contenido es mayor que la altura */
         }
+        /* Estilos del contenedor del formulario */
         .report-container {
             background-color: rgba(255, 255, 255, 0.9);
             padding: 40px;
@@ -34,20 +38,23 @@
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
             width: 100%;
             max-width: 800px;
-            margin-top: 20px; /* Space from top */
+            margin-top: 20px; /* Espacio desde la parte superior */
         }
+        /* Estilos del título del formulario */
         .report-container h2 {
             margin-bottom: 10px;
             color: #333;
             text-align: center;
             font-weight: 600;
         }
+        /* Estilos del párrafo del formulario */
         .report-container p {
             margin-bottom: 20px;
             color: #666;
             text-align: center;
             font-size: 16px;
         }
+        /* Estilos del botón de envío del formulario */
         .report-btn {
             width: 100%;
             padding: 12px;
@@ -59,9 +66,11 @@
             cursor: pointer;
             transition: background-color 0.3s;
         }
+        /* Estilos del botón de envío al pasar el cursor sobre él */
         .report-btn:hover {
             background-color: #218838;
         }
+        /* Estilos de las pequeñas notas informativas dentro del formulario */
         .form-group small {
             color: #666;
             font-size: 12px;
@@ -73,7 +82,9 @@
         <div class="report-container">
             <h2>Reportar Animal en Peligro</h2>
             <p>Por favor, completa la siguiente información para ayudarnos a actuar rápidamente.</p>
+            <!-- Formulario para reportar un animal en peligro -->
             <form id="reportForm">
+                <!-- Sección de información del animal -->
                 <div class="form-group">
                     <label for="animalName">Nombre del Animal</label>
                     <input type="text" class="form-control" id="animalName" name="animalName" required>
@@ -110,13 +121,16 @@
                     <input type="file" class="form-control-file" id="media" name="media" accept="image/*,video/*" multiple>
                     <small>Puede adjuntar fotos o videos del animal en peligro.</small>
                 </div>
+                <!-- Botón para enviar el reporte -->
                 <button type="submit" class="btn report-btn">Enviar Reporte</button>
             </form>
         </div>
     </div>
+    <!-- Scripts necesarios para Bootstrap y funcionalidades adicionales -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Script para manejar el envío del formulario -->
     <script>
         document.getElementById('reportForm').addEventListener('submit', function(event) {
             event.preventDefault();

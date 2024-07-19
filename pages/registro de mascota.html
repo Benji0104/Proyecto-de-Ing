@@ -4,54 +4,75 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Registro de Mascota</title>
+  <!-- Enlaza el archivo CSS personalizado para estilos adicionales -->
   <link rel="stylesheet" href="../css/style2.css">
+  <!-- Enlaza el archivo de estilos de Bootstrap para utilizar sus estilos y componentes -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <!-- Favicon -->
+  <!-- Favicon del sitio web -->
   <link rel="icon" href="../images/icono para la página.png" type="image/x-icon">
 </head>
 <body>
+  <!-- Contenedor principal de la página -->
   <div class="container">
+    <!-- Título de la página -->
     <h1>Formulario de Registro de Mascota</h1>
     <p>Use la tecla Tab para moverse de un campo de entrada a otro.</p>
+
+    <!-- Formulario para el registro de la mascota -->
     <form id="petRegistrationForm">
+      <!-- Sección de información del propietario -->
       <fieldset>
         <legend>Información del Propietario:</legend>
         <label for="ownerName">Nombre del Propietario:</label>
+        <!-- Campo para ingresar el nombre del propietario -->
         <input type="text" name="ownerName" id="ownerName" required>
         <label for="ownerEmail">Correo Electrónico:</label>
+        <!-- Campo para ingresar el correo electrónico del propietario -->
         <input type="email" name="ownerEmail" id="ownerEmail" required>
         <label for="ownerPhone">Teléfono:</label>
+        <!-- Campo para ingresar el teléfono del propietario -->
         <input type="text" name="ownerPhone" id="ownerPhone" required>
       </fieldset>
 
+      <!-- Sección de información de la mascota -->
       <fieldset>
         <legend>Información de la Mascota:</legend>
         <label for="petName">Nombre de la Mascota:</label>
+        <!-- Campo para ingresar el nombre de la mascota -->
         <input type="text" name="petName" id="petName" required>
         <label for="petType">Tipo de Mascota:</label>
+        <!-- Campo para ingresar el tipo de mascota -->
         <input type="text" name="petType" id="petType" required>
         <label for="petBreed">Raza:</label>
+        <!-- Campo para ingresar la raza de la mascota -->
         <input type="text" name="petBreed" id="petBreed" required>
         <label for="petAge">Edad:</label>
+        <!-- Campo para ingresar la edad de la mascota -->
         <input type="text" name="petAge" id="petAge" required>
         <label for="petGender">Género:</label>
+        <!-- Opciones de género de la mascota -->
         <label for="male">Macho</label>
         <input type="radio" name="petGender" id="male" value="male" required>
         <label for="female">Hembra</label>
         <input type="radio" name="petGender" id="female" value="female" required>
       </fieldset>
 
+      <!-- Sección de información adicional -->
       <fieldset>
         <legend>Información Adicional:</legend>
         <label for="comments">Comentarios:</label>
+        <!-- Área de texto para ingresar comentarios adicionales -->
         <textarea name="comments" id="comments" rows="4" cols="50"></textarea>
       </fieldset>
 
+      <!-- Botón para enviar el formulario -->
       <input type="submit" value="Registrar">
     </form>
   </div>
 
+  <!-- Scripts de jQuery para funcionalidades adicionales -->
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <!-- Script personalizado para manejar el formulario -->
   <script src="js/form-handler.js"></script>
 </body>
 </html>
