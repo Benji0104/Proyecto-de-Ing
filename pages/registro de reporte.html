@@ -75,9 +75,27 @@
             color: #666;
             font-size: 12px;
         }
+
+        .boton-inicio, .boton-agregar {
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            padding: 18px 20px;
+            background-color: #0400ff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 10px;
+        }
+        .boton-agregar {
+            left: 200px;
+        }
+        .boton-inicio:hover, .boton-agregar:hover {
+            background-color: #065db9;
+        }
     </style>
 </head>
 <body>
+    <a class="boton-inicio" href="index.html">Volver a Inicio</a>
     <div class="container">
         <div class="report-container">
             <h2>Reportar Animal en Peligro</h2>
