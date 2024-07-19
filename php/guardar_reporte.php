@@ -4,6 +4,7 @@ $username = "ping"; // Tu usuario de MySQL
 $password = "78195"; // Tu contraseña de MySQL
 $dbname = "projecti"; // El nombre de tu base de datos
 
+// Crear conexión
 $conn = new mysqli($servername, $username, $password, $dbname);
 
 // Verificar conexión
@@ -11,7 +12,7 @@ if ($conn->connect_error) {
     die("Conexión fallida: " . $conn->connect_error);
 }
 
-// Obtener datos del formulario
+// Recibir datos del formulario
 $ownerName = $_POST['ownerName'];
 $ownerEmail = $_POST['ownerEmail'];
 $ownerPhone = $_POST['ownerPhone'];
@@ -22,18 +23,15 @@ $petAge = $_POST['petAge'];
 $petGender = $_POST['petGender'];
 $comments = $_POST['comments'];
 
-// Preparar y vincular
-$stmt = $conn->prepare("INSERT INTO reporte (nombre, tipo, raza, edad, sexo, fecha_registro, eliminado) VALUES (?, ?, ?, ?, ?, CURDATE(), 0)");
-$stmt->bind_param("sssiss", $petName, $petType, $petBreed, $petAge, $petGender);
+// Insertar datos en la tabla reporte
+$sql = "INSERT INTO mascota (nombre, tipo, raza, edad, sexo, fecha_registro)
+VALUES ('$petName', '$petType', '$petBreed', '$petAge', '$petGender', NOW())";
 
-// Ejecutar la consulta
-if ($stmt->execute()) {
-    echo "Nuevo registro creado exitosamente";
+if ($conn->query($sql) === TRUE) {
+    echo "<script>alert('Registro exitoso'); window.location.href = 'registro de mascota.html';</script>";
 } else {
-    echo "Error: " . $stmt->error;
+    echo "Error: " . $sql . "<br>" . $conn->error;
 }
 
-// Cerrar la conexión
-$stmt->close();
 $conn->close();
 ?>
