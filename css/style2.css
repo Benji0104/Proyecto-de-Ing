@@ -11,13 +11,12 @@ body {
 }
 
 .container {
-  width: 100%;
+  width: fit-content;  
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  padding: 20px;
+  padding: 35%;
   box-sizing: border-box;
-  overflow-y: auto; 
 }
 
 .report-container {
@@ -119,3 +118,4 @@ textarea {
 input[type="radio"] {
   margin: 0 10px 0 5px
 }
+
