@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seguimiento de Mascotas Adoptadas</title>
+    <style>
+  body {
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('https://hospitalveterinario.cr/wp-content/uploads/2020/04/Que-es-un-Medico-Veterinario-blog-1.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+        }
+        .header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 20vh;
+            position: relative;
+        }
+        h1 {
+            color: #fff;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 20px;
+        }
+        .mascotas {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+        .mascota {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #fff;
+            margin: 10px;
+            padding: 10px;
+            text-align: center;
+            width: 300px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+            cursor: pointer;
+        }
+        .mascota:hover {
+            transform: scale(1.05);
+        }
+        .mascota img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+        .detalle-mascota {
+            display: none;
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .detalle-mascota img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+        .volver {
+            display: block;
+            text-align: center;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            width: fit-content;
+        }
+        .volver:hover {
+            background-color: #0056b3;
+        }
+        .boton-inicio, .boton-agregar {
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            padding: 18px 20px;
+            background-color: #0400ff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 10px;
+        }
+        .boton-agregar {
+            left: 200px;
+        }
+        .boton-inicio:hover, .boton-agregar:hover {
+            background-color: #065db9;
+        }
+        .boton-seguimiento, .boton-agregar-seguimiento, .boton-enviar-respuesta {
+            display: none;
+            margin-top: 10px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .boton-agregar-seguimiento {
+            background-color: #17a2b8;
+        }
+        .boton-enviar-respuesta {
+            background-color: #dc3545;
+        }
+        .boton-seguimiento:hover, .boton-agregar-seguimiento:hover, .boton-enviar-respuesta:hover {
+            background-color: #218838;
+        }
+        .boton-agregar-seguimiento:hover {
+            background-color: #138496;
+        }
+        .boton-enviar-respuesta:hover {
+            background-color: #c82333;
+        }
+        .formulario-seguimiento, .formulario-respuesta, .formulario-agregar {
+            display: none;
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .formulario-seguimiento h2, .formulario-respuesta h2, .formulario-agregar h2 {
+            text-align: center;
+        }
+        .formulario-seguimiento label, .formulario-respuesta label, .formulario-agregar label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .formulario-seguimiento input, .formulario-seguimiento textarea, .formulario-respuesta input, .formulario-respuesta textarea, .formulario-agregar input, .formulario-agregar textarea {
+            width: 95%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .formulario-seguimiento button, .formulario-respuesta button, .formulario-agregar button {
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .formulario-seguimiento button:hover, .formulario-respuesta button:hover, .formulario-agregar button:hover {
+            background-color: #218838;
+        }
+        .formulario-seguimiento button.cancelar, .formulario-respuesta button.cancelar, .formulario-agregar button.cancelar {
+            background-color: #dc3545;
+        }
+        .formulario-seguimiento button.cancelar:hover, .formulario-respuesta button.cancelar:hover, .formulario-agregar button.cancelar:hover {
+            background-color: #c82333;
+        }
+        .descripcion-mascota {
+            border-top: 2px solid #007BFF;
+            padding-top: 20px;
+            margin-top: 20px;
+            text-align: left;
+        }
+        .descripcion-mascota h3 {
+            color: #007BFF;
+            border-bottom: 1px solid #007BFF;
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+        }
+        .descripcion-mascota p {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a class="boton-inicio" href="index.php">Volver a Inicio</a>
+        <a class="boton-agregar" href="#" onclick="mostrarFormularioAgregar()">Agregar Mascota</a>
+        <h1>Seguimiento de Mascotas Adoptadas</h1>
+    </div>
+    <div class="mascotas" id="mascotas">
+        <div class="mascota" onclick="mostrarDetalle(1)">
+            <img src="https://th.bing.com/th/id/R.3cdaf651bdc9d03b71d0337fa7f968df?rik=M7tXrXeP294Z3w&riu=http%3a%2f%2fupload.wikimedia.org%2fwikipedia%2fcommons%2f3%2f37%2fLabrador_Retriever_Adulto.JPG&ehk=ApcU%2fU2TnHBGuuM12QK8tAX%2fP4XiZc%2fcmCEKRPoY2KA%3d&risl=1&pid=ImgRaw&r=0" alt="Perro 1">
+            <h2>MILO</h2>
+        </div>
+        <div class="mascota" onclick="mostrarDetalle(2)">
+            <img src="https://animalesmascotas.com/wp-content/uploads/2015/11/gatos-persas-cuidados-y-caracter-blanco.jpg?utm_source=amp&utm_medium=image" alt="Gato 1">
+            <h2>LUNA</h2>
+        </div>
+    </div>
+
+    <div class="detalle-mascota" id="detalleMascota">
+        <h1 id="nombreMascota">Nombre de la Mascota</h1>
+        <img id="imagenMascota" src="" alt="Imagen de la Mascota">
+        <div id="descripcionMascota" class="descripcion-mascota">
+            <!-- La descripción será insertada aquí por JavaScript -->
+        </div>
+        <button class="boton-seguimiento" id="botonSeguimientoDetalle" onclick="redirigirAHistorial()">Ver Seguimientos Anteriores</button>
+        <button class="boton-agregar-seguimiento" id="botonAgregarSeguimiento" onclick="mostrarFormularioSeguimiento()">Agregar Seguimiento</button>
+        <button class="boton-enviar-respuesta" id="botonEnviarRespuesta" onclick="mostrarFormularioRespuesta()">Enviar Respuesta</button>
+        <a class="volver" href="#" onclick="volver()">Volver</a>
+
+    </div>
+
+    <div class="formulario-agregar" id="formularioAgregar">
+        <h2>Agregar Nueva Mascota</h2>
+        <form id="formAgregarMascota">
+            <label for="nombreMascotaAgregar">Nombre:</label>
+            <input type="text" id="nombreMascotaAgregar" name="nombreMascotaAgregar" required>
+            <label for="fotoMascotaAgregar">Foto (URL):</label>
+            <input type="text" id="fotoMascotaAgregar" name="fotoMascotaAgregar" required>
+            <label for="descripcionMascotaAgregar">Descripción:</label>
+            <textarea id="descripcionMascotaAgregar" name="descripcionMascotaAgregar" rows="4" required></textarea>
+            <button type="submit">Agregar</button>
+            <button type="button" class="cancelar" onclick="ocultarFormularioAgregar()">Cancelar</button>
+        </form>
+    </div>
+
+    <div class="formulario-seguimiento" id="formularioSeguimiento">
+        <h2>Agregar Seguimiento</h2>
+        <form id="formSeguimiento">
+            <label for="fechaSeguimiento">Numero de seguimiento:</label>
+            <input type="number" id="numeroSeguimiento" name="numeroSeguimiento" required>
+            <label for="fechaSeguimiento">Fecha:</label>
+            <input type="date" id="fechaSeguimiento" name="fechaSeguimiento" required>
+            <label for="descripcionSeguimiento">Adaptacion de mascota:</label>
+            <textarea id="descripcionSeguimiento" name="descripcionSeguimiento" rows="4" required></textarea>
+            <label for="descripcionSeguimiento">Comentarios:</label>
+            <textarea id="comentariosSeguimiento" name="comentariosSeguimiento" rows="4" required></textarea>
+            <button type="submit">Guardar</button>
+            <button type="button" class="cancelar" onclick="ocultarFormularioSeguimiento()">Cancelar</button>
+        </form>
+    </div>
+
+    <div class="formulario-respuesta" id="formularioRespuesta">
+        <h2>Enviar Respuesta</h2>
+        <form id="formRespuesta">
+            <label for="respuesta">Respuesta:</label>
+            <textarea id="respuesta" name="respuesta" rows="4" required></textarea>
+            <button type="submit">Enviar</button>
+            <button type="button" class="cancelar" onclick="ocultarFormularioRespuesta()">Cancelar</button>
+        </form>
+    </div>
+
+
+    <script>
+        // Variables para mantener el ID de la mascota
+        let mascotaID = 3;
+
+        document.getElementById('formAgregarMascota').addEventListener('submit', function(event) {
+            event.preventDefault(); // Evita el envío normal del formulario
+
+            const nombre = document.getElementById('nombreMascotaAgregar').value;
+            const foto = document.getElementById('fotoMascotaAgregar').value;
+            const descripcion = document.getElementById('descripcionMascotaAgregar').value;
+
+            agregarMascota(nombre, foto, descripcion);
+            ocultarFormularioAgregar();
+        });
+
+        function agregarMascota(nombre, foto, descripcion) {
+    // Crear la nueva tarjeta de mascota
+    const mascotaDiv = document.createElement('div');
+    mascotaDiv.className = 'mascota';
+    mascotaDiv.onclick = function() { mostrarDetalle(mascotaID); };
+    mascotaDiv.innerHTML = `
+        <img src="${foto}" alt="${nombre}">
+        <h2>${nombre}</h2>
+    `;
+
+    // Agregar la nueva mascota a la lista
+    document.getElementById('mascotas').appendChild(mascotaDiv);
+
+    // Guardar la nueva mascota en Local Storage
+    let mascotas = JSON.parse(localStorage.getItem('mascotas')) || [];
+    mascotas.push({ id: mascotaID, nombre, foto, descripcion });
+    localStorage.setItem('mascotas', JSON.stringify(mascotas));
+
+    // Actualizar el ID para la próxima mascota
+    mascotaID++;
+}
+
+
+        function mostrarDetalle(id) {
+            // Oculta la sección de mascotas y muestra la de detalle
+            document.querySelector('.mascotas').style.display = 'none';
+            document.getElementById('detalleMascota').style.display = 'block';
+
+            // Configura los detalles de la mascota según el ID
+            if (id === 1) {
+                document.getElementById('nombreMascota').textContent = 'MILO';
+                document.getElementById('imagenMascota').src = 'https://th.bing.com/th/id/R.3cdaf651bdc9d03b71d0337fa7f968df?rik=M7tXrXeP294Z3w&riu=http%3a%2f%2fupload.wikimedia.org%2fwikipedia%2fcommons%2f3%2f37%2fLabrador_Retriever_Adulto.JPG&ehk=ApcU%2fU2TnHBGuuM12QK8tAX%2fP4XiZc%2fcmCEKRPoY2KA%3d&risl=1&pid=ImgRaw&r=0';
+                document.getElementById('descripcionMascota').innerHTML = `
+                    <h3>Datos Generales</h3>
+                    <p>Nombre: MILO</p>
+                    <p>Edad: 3 años</p>
+                    <p>Raza: Labrador</p>
+                    <p>Sexo: Macho</p>
+                    <h3>Vacunas</h3>
+                    <p>Vacuna 1: Hepatitis</p>
+                    <p>Vacuna 2: Parvovirus</p>
+                    <h3>Alergias</h3>
+                    <p>Alérgico a: Polen</p>
+                    <h3>Cuidado del Animal</h3>
+                    <p>Necesidades: Paseos diarios, dieta especial</p>
+                    <h3>Información Adicional</h3>
+                    <p>Descripción: Amistoso y juguetón</p>
+                `;
+                document.getElementById('botonSeguimientoDetalle').style.display = 'block';
+                document.getElementById('botonAgregarSeguimiento').style.display = 'block';
+                document.getElementById('botonEnviarRespuesta').style.display = 'block';
+            } else if (id === 2) {
+                document.getElementById('nombreMascota').textContent = 'LUNA';
+                document.getElementById('imagenMascota').src = 'https://animalesmascotas.com/wp-content/uploads/2015/11/gatos-persas-cuidados-y-caracter-blanco.jpg?utm_source=amp&utm_medium=image';
+                document.getElementById('descripcionMascota').innerHTML = `
+                    <h3>Datos Generales</h3>
+                    <p>Nombre: LUNA</p>
+                    <p>Edad: 2 años</p>
+                    <p>Raza: Siamesa</p>
+                    <p>Sexo: Hembra</p>
+                    <h3>Vacunas</h3>
+                    <p>Vacuna 1: Leucemia felina</p>
+                    <p>Vacuna 2: Rinotraqueitis</p>
+                    <h3>Alergias</h3>
+                    <p>Alérgico a: Polvo</p>
+                    <h3>Cuidado del Animal</h3>
+                    <p>Necesidades: Comida especial, atención diaria</p>
+                    <h3>Información Adicional</h3>
+                    <p>Descripción: Cariñosa y activa</p>
+                `;
+                document.getElementById('botonSeguimientoDetalle').style.display = 'block';
+                document.getElementById('botonAgregarSeguimiento').style.display = 'block';
+                document.getElementById('botonEnviarRespuesta').style.display = 'block';
+            }
+        }
+
+        function volver() {
+            // Muestra la sección de mascotas y oculta la de detalle
+            document.querySelector('.mascotas').style.display = 'flex';
+            document.getElementById('detalleMascota').style.display = 'none';
+        }
+
+        function mostrarFormularioAgregar() {
+            document.getElementById('formularioAgregar').style.display = 'block';
+        }
+
+        function ocultarFormularioAgregar() {
+            document.getElementById('formularioAgregar').style.display = 'none';
+        }
+
+        function mostrarFormularioSeguimiento() {
+            document.getElementById('formularioSeguimiento').style.display = 'block';
+        }
+
+        function ocultarFormularioSeguimiento() {
+            document.getElementById('formularioSeguimiento').style.display = 'none';
+        }
+
+        function mostrarFormularioRespuesta() {
+            document.getElementById('formularioRespuesta').style.display = 'block';
+        }
+
+        function ocultarFormularioRespuesta() {
+            document.getElementById('formularioRespuesta').style.display = 'none';
+        }
+
+        function redirigirAHistorial() {
+            // Redirige al historial de seguimientos
+            window.location.href = 'historial_seguimientos.html'; // Cambia la URL según tu archivo de historial
+        }
+    </script>
+</body>
+</html>
