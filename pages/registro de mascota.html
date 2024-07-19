@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reportar Animal en Peligro</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style2.css">
+    <link rel="icon" href="../images/icono para la página.png" type="image/x-icon">
+</head>
+<body>
+    <div class="container">
+        <div class="report-container">
+            <h2>Reportar Animal en Peligro</h2>
+            <p>Por favor, completa la siguiente información para ayudarnos a actuar rápidamente.</p>
+            <form id="reportForm">
+                <div class="form-group">
+                    <label for="animalName">Nombre del Animal</label>
+                    <input type="text" class="form-control" id="animalName" name="animalName" required>
+                </div>
+                <div class="form-group">
+                    <label for="animalType">Tipo de Animal</label>
+                    <input type="text" class="form-control" id="animalType" name="animalType" required>
+                </div>
+                <div class="form-group">
+                    <label for="description">Descripción del Animal</label>
+                    <textarea class="form-control" id="description" name="description" rows="3" required></textarea>
+                    <small>Proporcione detalles como apariencia, comportamiento, etc.</small>
+                </div>
+                <div class="form-group">
+                    <label for="location">Ubicación</label>
+                    <input type="text" class="form-control" id="location" name="location" required>
+                    <small>Incluya una dirección o coordenadas si es posible.</small>
+                </div>
+                <div class="form-group">
+                    <label for="reporterName">Su Nombre</label>
+                    <input type="text" class="form-control" id="reporterName" name="reporterName" required>
+                </div>
+                <div class="form-group">
+                    <label for="reporterEmail">Correo Electrónico</label>
+                    <input type="email" class="form-control" id="reporterEmail" name="reporterEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="contactNumber">Número de Contacto</label>
+                    <input type="tel" class="form-control" id="contactNumber" name="contactNumber" required>
+                </div>
+                <div class="form-group">
+                    <label for="comment">Comentario Adicional</label>
+                    <textarea class="form-control" id="comment" name="comment" rows="3"></textarea>
+                    <small>Puede dejar cualquier comentario adicional que considere relevante.</small>
+                </div>
+                <div class="form-group">
+                    <label for="media">Adjuntar Fotos o Videos</label>
+                    <input type="file" class="form-control-file" id="media" name="media" accept="image/*,video/*" multiple>
+                    <small>Puede adjuntar fotos o videos del animal en peligro.</small>
+                </div>
+                <div class="form-group">
+                    <label for="reportDate">Fecha del Reporte</label>
+                    <input type="date" class="form-control" id="reportDate" name="reportDate" required>
+                </div>
+                <button type="submit" class="btn report-btn">Enviar Reporte</button>
+            </form>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.getElementById('reportForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Reporte enviado exitosamente');
+            // Manejar la presentación del formulario aquí
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,281 @@
+<<<<<<< HEAD:pages/index.php
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAA</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- Link de Bootstrap CSS para el estilo del carrusel y el navbar -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Favicon -->
+    <link rel="icon" href="../images/icono para la página.png" type="image/x-icon">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Inicio</a> 
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="registro de mascota.html">Registro</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Visualizacion.html">Adoptar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="registro de reporte.html">Reportar Caso</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Seguimiento</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="registrar.html">Registrarse</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">Iniciar sesión</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Carrusel -->
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="../images/primerslide1.jpeg" class="d-block w-100" alt="Primer Slide">
+                <div class="carousel-caption d-md-block">
+                    <h2>¡Sé la luz para animales solitarios!</h2>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="../images/segundoslide1.jpg" class="d-block w-100" alt="Segundo Slide">
+                <div class="carousel-caption d-md-block">
+                    <h2>Añade una gran alegría a tu vida</h2>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="../images/tercerslide1.jpg" class="d-block w-100" alt="Tercer Slide">
+                <div class="carousel-caption d-md-block">
+                    <h2>Cuidemos sin importar lo que son</h2>
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Anterior</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Siguiente</span>
+        </a>
+    </div>
+
+   <!-- Contenido principal -->
+   <div class="container mt-4">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2">
+                <div class="main-content">
+                    <h2>Bienvenidos a Rescate y Adopción Animal</h2>
+                    <p>El refugio digital dedicado a transformar la vida de los animales en La Chorrera. Nuestra página está diseñada para ser una plataforma integral donde puedes:</p>
+
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h3 class="card-title">Registrarte como voluntario</h3>
+                            <p class="card-text">y unirte a nuestra causa.</p>
+                            <button class="btn btn-primary">Registrar mascota</button>
+                        </div>
+                    </div>
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h3 class="card-title">Adoptar una mascota</h3>
+                            <p class="card-text">en busca de un hogar amoroso, con un proceso fácil y transparente.</p>
+                            <button class="btn btn-primary">Adoptar</button>
+                        </div>
+                    </div>
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h3 class="card-title">Reportar casos de animales en peligro o situación de maltrato</h3>
+                            <p class="card-text">garantizando una respuesta rápida y efectiva.</p>
+                            <button class="btn btn-primary">Reportar caso de peligro</button>
+                        </div>
+                    </div>
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h3 class="card-title">Seguir el seguimiento de las mascotas adoptadas</h3>
+                            <p class="card-text">asegurando su bienestar continuo y facilitando la conexión entre adoptantes y nuestra comunidad de rescate.</p>
+                            <button class="btn btn-primary">Seguimiento de mascota</button>
+                        </div>
+                    </div>
+
+                    <p>En Rescate y Adopción Animal, creemos en la importancia de un enfoque comunitario para salvar vidas y fomentar el bienestar animal. Nuestra misión es no solo rescatar y rehabilitar a los animales necesitados, sino también crear una red de apoyo y educación para asegurar que cada mascota tenga una vida plena y feliz. Únete a nosotros y sé parte del cambio positivo en La Chorrera.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 R.D.A. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Scripts de Bootstrap para el funcionamiento del carrusel y el navbar -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+=======
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAA</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- Link de Bootstrap CSS para el estilo del carrusel y el navbar -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Favicon -->
+    <link rel="icon" href="../images/icono para la página.png" type="image/x-icon">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Inicio</a> 
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="registro de mascota.html">Registro</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Visualizacion.html">Adoptar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="registro de reporte.html">Reportar Caso</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Seguimiento</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="registrar.html">Registrarse</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="inicioseccion.html">Iniciar sesión</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Carrusel -->
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="../images/primerslide1.jpeg" class="d-block w-100" alt="Primer Slide">
+                <div class="carousel-caption d-md-block">
+                    <h2>¡Sé la luz para animales solitarios!</h2>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="../images/segundoslide1.jpg" class="d-block w-100" alt="Segundo Slide">
+                <div class="carousel-caption d-md-block">
+                    <h2>Añade una gran alegría a tu vida</h2>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="../images/tercerslide1.jpg" class="d-block w-100" alt="Tercer Slide">
+                <div class="carousel-caption d-md-block">
+                    <h2>Cuidemos sin importar lo que son</h2>
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Anterior</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Siguiente</span>
+        </a>
+    </div>
+
+   <!-- Contenido principal -->
+   <div class="container mt-4">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2">
+                <div class="main-content">
+                    <h2>Bienvenidos a Rescate y Adopción Animal</h2>
+                    <p>El refugio digital dedicado a transformar la vida de los animales en La Chorrera. Nuestra página está diseñada para ser una plataforma integral donde puedes:</p>
+
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h3 class="card-title">Registrarte como voluntario</h3>
+                            <p class="card-text">y unirte a nuestra causa.</p>
+                            <button class="btn btn-primary">Registrar mascota</button>
+                        </div>
+                    </div>
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h3 class="card-title">Adoptar una mascota</h3>
+                            <p class="card-text">en busca de un hogar amoroso, con un proceso fácil y transparente.</p>
+                            <button class="btn btn-primary">Adoptar</button>
+                        </div>
+                    </div>
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h3 class="card-title">Reportar casos de animales en peligro o situación de maltrato</h3>
+                            <p class="card-text">garantizando una respuesta rápida y efectiva.</p>
+                            <button class="btn btn-primary">Reportar caso de peligro</button>
+                        </div>
+                    </div>
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h3 class="card-title">Seguir el seguimiento de las mascotas adoptadas</h3>
+                            <p class="card-text">asegurando su bienestar continuo y facilitando la conexión entre adoptantes y nuestra comunidad de rescate.</p>
+                            <button class="btn btn-primary">Seguimiento de mascota</button>
+                        </div>
+                    </div>
+
+                    <p>En Rescate y Adopción Animal, creemos en la importancia de un enfoque comunitario para salvar vidas y fomentar el bienestar animal. Nuestra misión es no solo rescatar y rehabilitar a los animales necesitados, sino también crear una red de apoyo y educación para asegurar que cada mascota tenga una vida plena y feliz. Únete a nosotros y sé parte del cambio positivo en La Chorrera.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 R.D.A. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Scripts de Bootstrap para el funcionamiento del carrusel y el navbar -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+>>>>>>> 4a427a1081e5e5a857be5c2046438b8e385d2fc6:pages/index.html
