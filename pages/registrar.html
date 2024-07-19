@@ -4,151 +4,127 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Regístrate</title>
-    <!-- Enlaza el archivo de estilos de Bootstrap para utilizar sus estilos y componentes -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <!-- Favicon del sitio web -->
-    <link rel="icon" href="../images/icono para la página.png" type="image/x-icon">
+     <!-- Favicon -->
+  <link rel="icon" href="../images/icono para la página.png" type="image/x-icon">
     <style>
-        /* Estilos generales para el cuerpo del documento */
         body {
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; /* Fuente de texto */
-            background: url('https://wallpaperaccess.com/full/2886021.jpg') no-repeat center center fixed; /* Fondo de pantalla */
-            background-size: cover; /* Ajusta el tamaño del fondo para cubrir toda la pantalla */
-            display: flex; /* Utiliza flexbox para centrar el contenedor de registro */
-            justify-content: center; /* Centra el contenedor horizontalmente */
-            align-items: center; /* Centra el contenedor verticalmente */
-            height: 100vh; /* Altura completa de la ventana del navegador */
-            margin: 0; /* Elimina el margen por defecto del body */
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            background: url('https://wallpaperaccess.com/full/2886021.jpg') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
         }
-        /* Estilo del contenedor de registro */
         .register-container {
-            background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco con opacidad */
-            padding: 40px; /* Espacio interno alrededor del contenido */
-            border-radius: 15px; /* Bordes redondeados */
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* Sombra sutil alrededor del contenedor */
-            width: 100%; /* Ancho completo del contenedor */
-            max-width: 800px; /* Ancho máximo del contenedor */
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 800px;
         }
-        /* Estilo del título en el contenedor de registro */
         .register-container h2 {
-            margin-bottom: 10px; /* Espacio inferior debajo del título */
-            color: #333; /* Color del texto */
-            text-align: center; /* Centra el texto horizontalmente */
-            font-weight: 600; /* Peso de la fuente */
+            margin-bottom: 10px;
+            color: #333;
+            text-align: center;
+            font-weight: 600;
         }
-        /* Estilo de los párrafos en el contenedor de registro */
         .register-container p {
-            margin-bottom: 20px; /* Espacio inferior debajo del párrafo */
-            color: #666; /* Color del texto */
-            text-align: center; /* Centra el texto horizontalmente */
-            font-size: 16px; /* Tamaño de la fuente */
+            margin-bottom: 20px;
+            color: #666;
+            text-align: center;
+            font-size: 16px;
         }
-        /* Estilo del botón de registro */
         .register-btn {
-            width: 100%; /* Ancho completo del botón */
-            padding: 12px; /* Espacio interno dentro del botón */
-            background-color: #007bff; /* Color de fondo del botón */
-            border: none; /* Sin borde */
-            color: white; /* Color del texto */
-            border-radius: 8px; /* Bordes redondeados */
-            font-size: 16px; /* Tamaño de la fuente */
-            cursor: pointer; /* Cursor de mano al pasar sobre el botón */
-            transition: background-color 0.3s; /* Transición suave para el cambio de color de fondo */
+            width: 100%;
+            padding: 12px;
+            background-color: #007bff;
+            border: none;
+            color: white;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
         }
-        /* Estilo del botón de registro al pasar el cursor */
         .register-btn:hover {
-            background-color: #0056b3; /* Color de fondo al pasar el cursor */
+            background-color: #0056b3;
         }
-        /* Contenedor para los botones de redes sociales */
         .social-btn {
-            display: flex; /* Utiliza flexbox para alinear los botones */
-            flex-direction: column; /* Coloca los botones en columna */
-            justify-content: space-between; /* Espacia los botones uniformemente */
-            margin-top: 20px; /* Espacio superior */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            margin-top: 20px;
         }
-        /* Estilo de los botones de redes sociales */
         .social-btn a {
-            width: 100%; /* Ancho completo del botón */
-            padding: 15px; /* Espacio interno dentro del botón */
-            border-radius: 8px; /* Bordes redondeados */
-            font-size: 16px; /* Tamaño de la fuente */
-            text-align: center; /* Centra el texto horizontalmente */
-            color: white; /* Color del texto */
-            text-decoration: none; /* Sin subrayado */
-            margin-bottom: 10px; /* Espacio inferior entre los botones */
+            width: 100%;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 16px;
+            text-align: center;
+            color: white;
+            text-decoration: none;
+            margin-bottom: 10px;
         }
-        /* Estilo del botón de Facebook */
         .facebook-btn {
-            background-color: #3b5998; /* Color de fondo del botón */
+            background-color: #3b5998;
         }
-        /* Estilo del botón de Facebook al pasar el cursor */
         .facebook-btn:hover {
-            background-color: #30497c; /* Color de fondo al pasar el cursor */
+            background-color: #30497c;
         }
-        /* Estilo del botón de Google */
         .google-btn {
-            background-color: #db4437; /* Color de fondo del botón */
+            background-color: #db4437;
         }
-        /* Estilo del botón de Google al pasar el cursor */
         .google-btn:hover {
-            background-color: #c23321; /* Color de fondo al pasar el cursor */
+            background-color: #c23321;
         }
     </style>
 </head>
 <body>
-    <!-- Contenedor principal para el formulario de registro -->
     <div class="register-container">
         <h2>Regístrate</h2>
         <p>Hola bienvenid@s! sigue los pasos para registrarte</p>
         <div class="row">
-            <!-- Formulario de registro en la mitad izquierda -->
             <div class="col-md-6">
                 <form id="registrationForm">
                     <div class="form-group">
                         <label for="email">Correo Electrónico</label>
-                        <!-- Campo para ingresar el correo electrónico -->
                         <input type="email" class="form-control" id="email" name="email" required>
                     </div>
                     <div class="form-group">
                         <label for="confirm-email">Repite el Correo Electrónico</label>
-                        <!-- Campo para confirmar el correo electrónico -->
                         <input type="email" class="form-control" id="confirm-email" name="confirm-email" required>
                     </div>
                     <div class="form-group">
                         <label for="password">Contraseña</label>
-                        <!-- Campo para ingresar la contraseña -->
                         <input type="password" class="form-control" id="password" name="password" required>
                     </div>
                     <div class="form-group">
                         <label for="confirm-password">Repite la Contraseña</label>
-                        <!-- Campo para confirmar la contraseña -->
                         <input type="password" class="form-control" id="confirm-password" name="confirm-password" required>
                     </div>
-                    <!-- Botón para enviar el formulario -->
                     <button type="submit" class="btn register-btn">Registrarse</button>
                 </form>
             </div>
-            <!-- Sección para los botones de redes sociales en la mitad derecha -->
             <div class="col-md-6 d-flex flex-column align-items-center justify-content-center">
-                <p>O regístrate a través de:</p>
+                <p>Tambien te puedes registrar a través de:</p>
                 <div class="social-btn">
-                    <!-- Botones de redes sociales -->
                     <a href="#" class="facebook-btn">Facebook</a>
                     <a href="#" class="google-btn">Google</a>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Scripts de jQuery, Popper.js y Bootstrap para funcionalidad de la página -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
-        // Maneja el evento de envío del formulario
         document.getElementById('registrationForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Previene el envío del formulario
-            alert('Registro exitoso'); // Muestra una alerta de éxito
-            window.location.href = 'inicioseccion.html'; // Redirige al usuario a la página de inicio de sesión
+            event.preventDefault();
+            alert('Registro exitoso');
+            window.location.href = 'inicioseccion.html';
         });
     </script>
 </body>

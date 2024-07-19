@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seguimiento de Mascotas Adoptadas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('https://th.bing.com/th/id/R.3f92f296bfc37f1430874203e7d74326?rik=1IYKjdrjjYXq%2fA&pid=ImgRaw&r=0') no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+        }
+        .header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 20vh;
+            position: relative;
+        }
+        h1 {
+            color: #fff;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 20px;
+        }
+        .mascotas {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+        .mascota {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #fff;
+            margin: 10px;
+            padding: 10px;
+            text-align: center;
+            width: 300px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+            cursor: pointer;
+        }
+        .mascota:hover {
+            transform: scale(1.05);
+        }
+        .mascota img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+        .detalle-mascota {
+            display: none;
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .detalle-mascota img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+        .volver {
+            display: block;
+            text-align: center;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            width: fit-content;
+        }
+        .volver:hover {
+            background-color: #0056b3;
+        }
+        .boton-inicio {
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            padding: 18px 20px;
+            background-color: #0400ff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 10px;
+        }
+        .boton-inicio:hover {
+            background-color: #065db9;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a class="boton-inicio" href="seguimiento.html">Volver a Seguimientos</a>
+        <h1>Historial de mascotas</h1>
+    </div>
+    <div class="mascotas" id="mascotas">
+        <div class="mascota" onclick="mostrarDetalle(1)">
+            <img src="https://th.bing.com/th/id/R.3cdaf651bdc9d03b71d0337fa7f968df?rik=M7tXrXeP294Z3w&riu=http%3a%2f%2fupload.wikimedia.org%2fwikipedia%2fcommons%2f3%2f37%2fLabrador_Retriever_Adulto.JPG&ehk=ApcU%2fU2TnHBGuuM12QK8tAX%2fP4XiZc%2fcmCEKRPoY2KA%3d&risl=1&pid=ImgRaw&r=0" alt="Perro 1">
+            <h2>MILO</h2>
+        </div>
+        <div class="mascota" onclick="mostrarDetalle(2)">
+            <img src="https://animalesmascotas.com/wp-content/uploads/2015/11/gatos-persas-cuidados-y-caracter-blanco.jpg?utm_source=amp&utm_medium=image" alt="Gato 1">
+            <h2>LUNA</h2>
+        </div>
+    </div>
+
+    <div class="detalle-mascota" id="detalleMascota">
+        <h1 id="nombreMascota">Nombre de la Mascota</h1>
+        <img id="imagenMascota" src="" alt="Imagen de la Mascota">
+        <p id="descripcionMascota">Descripción de la mascota...</p>
+        <a class="volver" href="#" onclick="ocultarDetalle()">Volver</a>
+    </div>
+
+    <script>
+        const mascotas = {
+            1: {
+                nombre: "MILO",
+                imagen: "https://th.bing.com/th/id/R.3cdaf651bdc9d03b71d0337fa7f968df?rik=M7tXrXeP294Z3w&riu=http%3a%2f%2fupload.wikimedia.org%2fwikipedia%2fcommons%2f3%2f37%2fLabrador_Retriever_Adulto.JPG&ehk=ApcU%2fU2TnHBGuuM12QK8tAX%2fP4XiZc%2fcmCEKRPoY2KA%3d&risl=1&pid=ImgRaw&r=0",
+                descripcion: `
+                    <strong>Datos Generales:</strong>
+                    <ul>
+                        <li><strong>Nombre:</strong> MILO</li>
+                        <li><strong>Numero de seguimiento:</strong> 1</li>
+                        <li><strong>Fecha de seguimiento:</strong> 2024-03-15</li>
+
+                    </ul>
+                    <strong>Adaptacion de mascota:</strong>
+                    <ul>
+                        <li>Milo se está adaptando bien a su nuevo hogar. Ha mostrado interés en jugar y ya ha establecido una rutina de alimentación.</li>
+                    </ul>
+                    <strong>Comentarios:</strong>
+                    <ul>
+                        <li>Estamos encantados con Milo y su energía. Es un miembro querido de nuestra familia ahora.</li>
+                    </ul>
+                   
+                    <strong>Respuesta:</strong>
+                    <ul>
+                        <li>Gracias por compartir cómo está Milo. Nos alegra saber que se está adaptando bien. Si tienen más noticias o necesitan algo, no duden en contactarnos.</li>
+                    </ul>
+                    
+                    <strong>____________________________________________________________________</strong>
+                    <ul>
+                        <li><strong>Numero de seguimiento:</strong> 2</li>
+                        <li><strong>Fecha de seguimiento:</strong> 2024-04-15</li>
+
+                    </ul>
+                    <strong>Adaptacion de mascota:</strong>
+                    <ul>
+                        <li>Milo ha demostrado ser muy cariñoso y se lleva bien con los niños de la familia. Está aprendiendo nuevos comandos y disfruta de los paseos diarios.</li>
+                    </ul>
+                    <strong>Comentarios:</strong>
+                    <ul>
+                        <li>Estamos impresionados con cómo Milo se adapta a nuestra rutina. Es un verdadero compañero.</li>
+                    </ul>
+                   
+                    <strong>Respuesta:</strong>
+                    <ul>
+                        <li>Gracias por la actualización sobre Milo. Estamos aquí para cualquier consulta o necesidad que tengan en el futuro.</li>
+                    </ul>
+                    
+                    
+                    
+                    `
+            },
+            2: {
+                nombre: "LUNA",
+                imagen: "https://animalesmascotas.com/wp-content/uploads/2015/11/gatos-persas-cuidados-y-caracter-blanco.jpg?utm_source=amp&utm_medium=image",
+                descripcion: `
+                    <strong>SIN SEGUIMIENTOS, ESTAMOS A LA ESPERA DE SU PRIMER SEGUIMIENTO.</strong>
+`
+            }
+        };
+
+        function mostrarDetalle(id) {
+            const detalle = document.getElementById('detalleMascota');
+            const nombre = document.getElementById('nombreMascota');
+            const imagen = document.getElementById('imagenMascota');
+            const descripcion = document.getElementById('descripcionMascota');
+
+            nombre.textContent = mascotas[id].nombre;
+            imagen.src = mascotas[id].imagen;
+            descripcion.innerHTML = mascotas[id].descripcion;
+            detalle.style.display = 'block';
+            document.querySelector('.mascotas').style.display = 'none';
+        }
+
+        function ocultarDetalle() {
+            const detalle = document.getElementById('detalleMascota');
+            detalle.style.display = 'none';
+            document.querySelector('.mascotas').style.display = 'flex';
+        }
+    </script>
+</body>
+</html>
